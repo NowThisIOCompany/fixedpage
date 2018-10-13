@@ -1,7 +1,10 @@
-runtime: php55
+runtime: php72
 api_version: 1
 threadsafe: true
 handlers:
-- url: /.*
+- url: /
   script: output/index.php
+- url: /(.*\.(ico|gif|png|jpg))$
+  static_files: output/\1
+  upload: output/.*\.(ico|gif|png|jpg)$
 
